@@ -29,5 +29,22 @@ fs.readFile(data, "utf8", (error, data) => {
     return `Tri à bulle/Bubble Sort: ${comparaisonsCounter} comparaisons - [${numbers}]`;
   };
 
+  /* ------------------------------------------------------------------------------ */
+  // Tri par insertion / Insertion sort
 
+  const insersionSort = (arr_numbers) => {
+    let numbers = [...arr_numbers];
+    let comparaisonsCounter = 0;
 
+    for (let i = 1; i < numbers.length; i++) {
+      x = numbers[i];
+      j = i;
+      while (j > 0 && numbers[j - 1] > x) {
+        comparaisonsCounter++;
+        numbers[j] = numbers[j - 1];
+        j -= 1;
+      }
+      numbers[j] = x;
+    }
+    return `Tri par insertion/Insertion sort: ${comparaisonsCounter} comparaisons - [${numbers}]`;
+  };
